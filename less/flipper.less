@@ -1,0 +1,101 @@
+@flip-speed: 0.6s;
+
+.flipper-inner {
+
+	.flipper-container {
+		margin: 0 auto;
+		perspective: 1000px;
+	}
+
+	.flipper-container, .front, .back {
+		width: 100%;
+		height: 350px;
+	}
+
+	.flipper {
+		position: relative;
+		height: 100%;
+		margin: 10px;
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		cursor: pointer;
+
+		&.animating {
+			-webkit-transition: @flip-speed;
+			-moz-transition: @flip-speed;
+			-ms-transition: @flip-speed;
+			-o-transition: @flip-speed;
+			transition: @flip-speed;
+		}
+		&.stage-1 {.transform(180deg);}
+		&.stage-2 {.transform(360deg);}
+		&.stage-3 {.transform(540deg);}
+		&.stage-4 {.transform(720deg);}
+		&.stage-5 {.transform(900deg);}
+		&.stage-6 {.transform(1080deg);}
+		&.stage-7 {.transform(1260deg);}
+		&.stage-8 {.transform(1440deg);}
+		&.stage-9 {.transform(1620deg);}
+		&.stage-10 {.transform(1800deg);}
+		&.stage-11 {.transform(1980deg);}
+		&.stage-12 {.transform(2160deg);}
+	}
+
+	/* hide back of pane during swap */
+	.flipper-item {
+		z-index: 2;
+		backface-visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: @primary-color-inverted;
+		-webkit-box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+		box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+		.transform(0deg);
+
+		&.back {
+			z-index: 1;
+			.transform(180deg);
+		}
+
+		.flipper-item-title {
+			background: @primary-color;
+			color: @primary-color-inverted;
+			padding: 20px;
+		}
+
+		.flipper-item-body {
+			background: @primary-color-inverted;
+			padding: 20px 20px 50px;
+			color: @font-color;
+		}
+
+		.flipper-item-img {
+
+		}
+
+		.flipper-item-instruction {
+			position: absolute;
+			margin: 20px;
+			bottom: 0;
+			right: 0;
+			color: @primary-color;
+		}
+	}
+
+
+}
+
+.transform(@angle) {
+	-webkit-transform: rotateY(@angle);
+	-moz-transform: rotateY(@angle);
+	-ms-transform: rotateY(@angle);
+	-o-transform: rotateY(@angle);
+	transform: rotateY(@angle);
+}

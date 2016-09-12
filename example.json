@@ -1,0 +1,52 @@
+[
+	{
+		"_id": "c-01",
+		"_parentId": "b-01",
+		"_type": "component",
+		"_component": "flipper",
+		"_classes": "",
+		"_layout": "full",
+		"title": "Flipper",
+		"displayTitle": "Flipper",
+		"body": "",
+		"width": 320,
+		"_items": [
+			{
+				"_graphic": {
+					"src": "",
+					"alt": ""
+				}
+			},
+			{
+				"title": "Welcome",
+				"body": "To the Flipper component!",
+				"instruction": "Next »"
+			},
+			{
+				"title": "You can currently have...",
+				"body": "...up to twelve items.",
+				"instruction": "Next »"
+			},
+			{
+				"title": "Only 12??",
+				"body": "This should be more than plenty. If not, you should probably consider a different component or splitting your content up.",
+				"instruction": "Next »"
+			},
+			{
+				"title": "To infinity...",
+				"body": "...and beyond. When you reach the end you can simply start again.",
+				"instruction": "Next »"
+			},
+			{
+				"title": "Usage",
+				"body": "Whilst you can include graphics, this element is useful for making text lists a bit more interesting.",
+				"instruction": "Next »"
+			},
+			{
+				"title": "That's it",
+				"body": "Happy flipping!",
+				"instruction": "Complete ✔"
+			}
+		]
+	}
+]

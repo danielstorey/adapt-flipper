@@ -1,0 +1,16 @@
+{
+  "name": "adapt-flipper",
+  "version": "1.0",
+  "framework": "^2.0.0",
+  "homepage": "",
+  "issues": "",
+  "displayName" : "Flipper",
+  "component" : "flipper",
+  "description": "",
+  "main": "/js/adapt-flipper.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}
