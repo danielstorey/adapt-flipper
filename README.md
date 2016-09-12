@@ -1,69 +1,55 @@
-# adapt-blinds
+# adapt-flipper
 
-**Blinds** is a *presentation component* Created by Dan storey.
-<img align="right" src="https://raw.githubusercontent.com/danielstorey/adapt-resources/master/blinds-demo.jpg" alt="blinds in action">
+**Flipper** is a *presentation component* Created by Dan storey.
+<img align="right" src="">
 
-When a learner hovers on one of the images, it widens and the other images narrow accordingly. If set, then an array of captions will appear. Positions and timings of these can be customised.
+A **Flipper** displays lists of items one at a time. When the learner clicks on the component it flips to the next item. The component completes when the last item is displayed but the learner can continue to interact with the component as it loops back to the beginning.
 
 
 ##Installation
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Blinds**, and are properly formatted as JSON in [*example.json*](https://github.com/danielstorey/adapt-blinds/example.json).
+The attributes listed below are used in *components.json* to configure **Flipper**, and are properly formatted as JSON in [*example.json*](https://github.com/danielstorey/adapt-flipper/example.json).
 
 ### Attributes
 
 [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes): These are inherited by every Adapt component. [Read more](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
 
-**_component** (string): This value must be: `blinds`. (One word.)
+**_component** (string): This value must be: `flipper`. (One word.)
 
-**_classes** (string): CSS class name to be applied to **Blinds** containing `div`. The class must be predefined in one of the Less files. Separate multiple classes with a space.
+**_classes** (string): CSS class name to be applied to **Flipper** containing `div`. The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
 **_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
 **instruction** (string): This optional text appears above the component. It is frequently used to
 guide the learner’s interaction with the component.
 
-**_setCompletionOn** (string): This value determines when the component registers as complete. Acceptable values are `"allItems"` and `"inview"`. `"allItems"` requires each blind to be visited. `"inview"` requires the **Blinds** component to enter the view port completely.
+**title** (string): This is the title text for the **Flipper** component.
 
-**title** (string): This is the title text for the **Blinds** component.
+**body** (string): This is the main text for the **Flipper** component.
 
-**body** (string): This is the main text for the **Blinds** component.
+**width** (number): Width in pixels. Default is 100% width.
 
-**height** (number): Height in pixels. Default is 500.
+**_items** (string): Each item represents one flipper container's worth of content for this component.
 
-**expandBy** (number): The amount to expand the blind by when hovering over it. Defaults is 2 (width of the blind doubles).
+>**_graphic** (string): An image to be used for the flipper item (Optional).
 
-**captionDelay** (number): The amount of time in ms between each caption appearing. Default is 800.
-
-**_items** (string): Each item represents one image for this component and contains values for **_graphic** and **captions**.
-
->**_graphic** (string): The image to be used for the blind item. Since the image is used as a background image for a `div` no src, alt or title attributes are required
-
->>**src** (string): File name (not including path) of the image. Images should be placed in the *src/course/en/images* folder.
+>>**src** (string): path of the image relative to the src folder.
 
 >>**alt** (string): This text becomes the image’s `alt` attribute.
 
->>**title** (string): This text becomes the image’s `title` attribute.
+>**title** (string): The title text for the item.
 
->**captions** (array): An optional array of captions for the image.
+>**body** (string): The body text for the item.
 
->>**_text** (string): Each caption must have a **_text** property. This is the text to be displayed inside the caption.
-
->>**top** (mixed): Each caption can contain optional **top**, **left** and **width** values to position them on the image. Values can be given as a number or string. A number will be interpreted as pixels but a string value may be used to specify a percentage (eg. "20%"). Default is 0. Multiple captions appear 10px below the previous one unless this value is specified.
-
->>**left** (mixed): Specify the position of the caption from the left. Value can be given as a number or a string. Default is 0;
-
->>**width** (mixed): Specify the max width of the caption. Value can be given as a string or a number. Default behaviour is to fit the width of the text
+>**Instruction** (string): Text displayed at the bottom right of each item instructing the learner to click next or advising them that the interaction is complete.
 
 ### Accessibility
 
 
 
 ## Limitations
-
-Viewport sizing
 
 ----------------------------
 **Version number:**  1.0
