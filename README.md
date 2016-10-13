@@ -1,12 +1,13 @@
 # adapt-flipper
 
 **Flipper** is a *presentation component* Created by Dan storey.
-<img align="right" src="">
+<img align="right" src="https://raw.githubusercontent.com/danielstorey/assets/master/flipper-demo.jpg">
 
 A **Flipper** displays lists of items one at a time. When the learner clicks on the component it flips to the next item. The component completes when the last item is displayed but the learner can continue to interact with the component as it loops back to the beginning.
 
-
 ##Installation
+
+Simply copy this folder into src/components/ and run the `grunt build` command.
 
 ## Settings Overview
 
@@ -14,7 +15,7 @@ The attributes listed below are used in *components.json* to configure **Flipper
 
 ### Attributes
 
-For core model attributes see. [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes). The attributes listed below are specific to the `Flipper` component.
+For core model attributes see [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes). The attributes listed below are specific to the `Flipper` component.
 
 **_component** (string): This value must be: `flipper`. (One word.)
 

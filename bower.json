@@ -1,16 +1,20 @@
 {
-  "name": "adapt-flipper",
-  "version": "1.0",
-  "framework": "^2.0.0",
-  "homepage": "",
-  "issues": "",
-  "displayName" : "Flipper",
-  "component" : "flipper",
-  "description": "",
-  "main": "/js/adapt-flipper.js",
-  "keywords": [
-    "adapt-plugin",
-    "adapt-component"
-  ],
-  "license": "GPLv3"
+	"name": "adapt-flipper",
+	"description": "",
+	"version": "1.0",
+	"framework": "^2.0.0",
+	"displayName": "Flipper",
+	"component": "flipper",
+	"main": "/js/adapt-flipper.js",
+	"homepage": "https://github.com/danielstorey/adapt-flipper",
+	"repository": "git://github.com/danielstorey/adapt-flipper.git",
+	"issues": "https://github.com/danielstorey/adapt-flipper/issues",
+	"keywords": [
+		"adapt-plugin",
+		"adapt-component"
+	],
+	"license": "GPLv3",
+	"authors": [
+		"Dan Storey <danielstorey@gmail.com>"
+	]
 }

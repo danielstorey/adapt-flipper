@@ -5,10 +5,10 @@
             <div class="flipper stage-0">
                 {{#each _items}}
                 <div class="flipper-item nth-child-{{@index}}">
-                    {{#if title}}<div class="flipper-item-title">{{title}}</div>{{/if}}
-                    {{#if body}}<div class="flipper-item-body">{{body}}</div>{{/if}}
+                    {{#if title}}<div class="flipper-item-title">{{{a11y_text title}}}</div>{{/if}}
+                    {{#if body}}<div class="flipper-item-body">{{{a11y_text body}}}</div>{{/if}}
                     {{#if _graphic}}<img class="flipper-item-img" src="{{_graphic.src}}" alt="{{_graphic.alt}}">{{/if}}
-                    {{#if instruction}}<div class="flipper-item-instruction">{{instruction}}</div>{{/if}}
+                    {{#if instruction}}<div class="flipper-item-instruction">{{{a11y_text instruction}}}</div>{{/if}}
                 </div>
                 {{/each}}
             </div>
