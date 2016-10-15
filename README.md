@@ -9,7 +9,7 @@ A **Flipper** displays lists of items one at a time. When the learner clicks on 
 
 ##Installation
 
-Simply copy this folder into src/components/ and run the `grunt build` command.
+Run the following from the command line: `adapt install adapt-flipper`
 
 ## Settings Overview
 
