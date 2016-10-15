@@ -5,6 +5,8 @@
 
 A **Flipper** displays lists of items one at a time. When the learner clicks on the component it flips to the next item. The component completes when the last item is displayed but the learner can continue to interact with the component as it loops back to the beginning.
 
+[**Click here for an interactive demo**](https://danielstorey.github.io/adapt-demo-course/#/id/co-main)
+
 ##Installation
 
 Simply copy this folder into src/components/ and run the `grunt build` command.
