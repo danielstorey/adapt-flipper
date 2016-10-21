@@ -9,7 +9,8 @@
       "required": true,
       "default": "",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     }
   },
   "properties":{
@@ -27,6 +28,80 @@
       "inputType": "Text",
       "validators": [],
       "help": "This is the instruction text"
+    },
+    "width": {
+      "type": "string",
+      "required": false,
+      "title": "Width",
+      "default": "",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "This is the width of the flipper in pixels"
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Item Title",
+            "default": "",
+            "validators": [],
+            "help": "This is the optional item title",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "inputType": "TextArea",
+            "title": "Item Body",
+            "default": "",
+            "validators": [],
+            "help": "This is the optional item body text",
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Graphic",
+            "properties":{
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "The alternative text for this image",
+                "translatable": true
+              },
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Optional image which will be rendered with the item body text"
+              }
+            }
+          },
+          "instruction": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Instruction",
+            "default": "",
+            "validators": [],
+            "help": "This is the optional instruction for the item",
+            "translatable": true
+          }
+        }
+      }
     }
   }
 }
