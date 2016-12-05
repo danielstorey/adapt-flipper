@@ -43,7 +43,9 @@ For core model attributes see [**core model attributes**](https://github.com/ada
 
 ## Limitations
 
+Doesn't work in IE
+
 ----------------------------
-**Version number:**  1.0
+**Version number:**  1.0.1
 **Framework versions:**  2.0
 **Author / maintainer:** Dan Storey
