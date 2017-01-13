@@ -31,8 +31,13 @@ define(function(require) {
 		setItemVisibility: function() {
 			var stage = this.model.get("_stage");
 			_.each(this.$(".flipper-item"), function(el, i) {
-				var display = stage === i || stage - 1 === i ? "block" : "none";
-				el.style.display = display;
+				if(stage === i) {
+					el.className = el.className.replace(/state-\d+/, 'state-1');
+				} else if(stage - 1 === i) {
+					el.className = el.className.replace(/state-\d+/, 'state-2');
+				} else {
+					el.className = el.className.replace(/state-\d+/, 'state-0');
+				}
 			}, this);
 		},
 

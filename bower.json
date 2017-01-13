@@ -1,7 +1,7 @@
 {
 	"name": "adapt-flipper",
 	"description": "Displays lists of items one at a time. When the learner clicks on the component it flips to the next item. Demo available.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"framework": "^2.0.0",
 	"displayName": "Flipper",
 	"component": "flipper",
