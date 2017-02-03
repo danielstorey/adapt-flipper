@@ -1,17 +1,19 @@
 <div class="flipper-inner component-inner">
-    {{> component this}}
-    <div class="flipper-widget component-widget">
-        <div class="flipper-container">
-            <div class="flipper stage-0">
-                {{#each _items}}
-                <div class="flipper-item nth-child-{{@index}}">
-                    {{#if title}}<div class="flipper-item-title">{{{a11y_text title}}}</div>{{/if}}
-                    {{#if body}}<div class="flipper-item-body">{{{a11y_text body}}}</div>{{/if}}
-                    {{#if _graphic}}<img class="flipper-item-img" src="{{_graphic.src}}" alt="{{_graphic.alt}}">{{/if}}
-                    {{#if instruction}}<div class="flipper-item-instruction">{{{a11y_text instruction}}}</div>{{/if}}
-                </div>
-                {{/each}}
-            </div>
-        </div>
-    </div>
+	{{> component this}}
+	<div class="flipper-widget component-widget">
+		<div class="flipper-container">
+			<div class="flipper stage-0">
+				{{#each _items}}
+					<div class="flipper-item nth-child-{{@index}} state-0">
+						{{#if title}}<div class="flipper-item-title">{{{a11y_text title}}}</div>{{/if}}
+						{{#if body}}<div class="flipper-item-body">{{{a11y_text body}}}</div>{{/if}}
+						{{#if _graphic}}
+							{{#if src}}<img class="flipper-item-img" src="{{_graphic.src}}" alt="{{_graphic.alt}}{{/if}}">
+						{{/if}}
+						{{#if instruction}}<div class="flipper-item-instruction">{{{a11y_text instruction}}}</div>{{/if}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
 </div>
