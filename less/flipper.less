@@ -25,24 +25,16 @@
 		cursor: pointer;
 
 		&.animating {
-			-webkit-transition: @flip-speed;
-			-moz-transition: @flip-speed;
-			-ms-transition: @flip-speed;
-			-o-transition: @flip-speed;
-			transition: @flip-speed;
+			.flipper-item {
+				&:not(.state-0) {
+					-webkit-transition: @flip-speed;
+					-moz-transition: @flip-speed;
+					-ms-transition: @flip-speed;
+					-o-transition: @flip-speed;
+					transition: @flip-speed;
+				}
+			}
 		}
-		&.stage-1 {.transform(180deg);}
-		&.stage-2 {.transform(360deg);}
-		&.stage-3 {.transform(540deg);}
-		&.stage-4 {.transform(720deg);}
-		&.stage-5 {.transform(900deg);}
-		&.stage-6 {.transform(1080deg);}
-		&.stage-7 {.transform(1260deg);}
-		&.stage-8 {.transform(1440deg);}
-		&.stage-9 {.transform(1620deg);}
-		&.stage-10 {.transform(1800deg);}
-		&.stage-11 {.transform(1980deg);}
-		&.stage-12 {.transform(2160deg);}
 	}
 
 	/* hide back of pane during swap */
@@ -91,6 +83,16 @@
 			bottom: 0;
 			right: 0;
 			color: @primary-color;
+		}
+
+		&.state-0 {
+			.transform(-180deg);
+		}
+		&.state-1 {
+			.transform(0deg);
+		}
+		&.state-2 {
+			.transform(180deg);
 		}
 	}
 
