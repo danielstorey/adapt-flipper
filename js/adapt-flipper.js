@@ -14,19 +14,7 @@ define(function(require) {
         },
 
         postRender: function() {
-            var $items = this.$(".flipper-item");
             var $container = this.$(".flipper-container");
-            var numItems = $items.length;
-
-            _.each($items, function(el, i) {
-                if (i % 2 !== 0) $(el).addClass("back");
-            }, this);
-
-            var $clone = $items.eq(0).clone().appendTo($items.parent());
-
-            if (numItems % 2 !== 0) {
-                $clone.addClass("back");
-            }
 
             if (this.model.get("width")) {
                 $container.width(this.model.get("width"));
@@ -54,13 +42,14 @@ define(function(require) {
 
         setItemVisibility: function() {
             var stage = this.model.get("_stage");
+            var rx = /state-\d+/;
             _.each(this.$(".flipper-item"), function(el, i) {
-                if(stage === i) {
-                    el.className = el.className.replace(/state-\d+/, 'state-1');
-                } else if(stage - 1 === i) {
-                    el.className = el.className.replace(/state-\d+/, 'state-2');
+                if (stage === i) {
+                    el.className = el.className.replace(rx, 'state-1');
+                } else if (stage - 1 === i || (stage === 0 && i === this.model.get('_items').length - 1)) {
+                    el.className = el.className.replace(rx, 'state-2');
                 } else {
-                    el.className = el.className.replace(/state-\d+/, 'state-0');
+                    el.className = el.className.replace(rx, 'state-0');
                 }
             }, this);
         },
@@ -71,10 +60,11 @@ define(function(require) {
             this.setLock();
 
             var stage = this.model.get("_stage") + 1;
-            if (stage + 1 === this.model.get("_items").length) {
-                this.onComplete();
-            } else if (stage === this.model.get("_items").length) {
-                this.resetFlipper();
+            var numItems = this.model.get("_items").length;
+            if (stage + 1 === numItems) {
+                this.setCompletionStatus();
+            } else if (stage === numItems) {
+                stage = 0;
             }
 
             this.setStage(stage);
@@ -95,17 +85,6 @@ define(function(require) {
             var flipper = this.$(".flipper")[0];
             flipper.className = flipper.className.replace(/stage-\d+/, "stage-" + stage);
             this.setItemVisibility();
-        },
-
-        onComplete: function() {
-            this.setCompletionStatus();
-
-        },
-
-        resetFlipper: function() {
-            setTimeout(function() {
-                this.setStage(0);
-            }.bind(this), 600);
         }
 
     });
