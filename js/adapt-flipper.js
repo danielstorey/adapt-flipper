@@ -5,7 +5,7 @@ define(function(require) {
 
     var Flipper = ComponentView.extend({
         events: {
-            "click .flipper-container": "onClick"
+            "click .flipper-container, .flipper-button": "onClick"
         },
 
         preRender: function() {
@@ -26,6 +26,7 @@ define(function(require) {
         onImageReady: function() {
             this.setItemVisibility();
             this.setItemHeights();
+            this.setScreenReaderVisibility();
             this.setReadyStatus();
         },
 
@@ -54,6 +55,10 @@ define(function(require) {
             }, this);
         },
 
+        setScreenReaderVisibility: function() {
+            this.$(".flipper-active-item").empty().prepend(this.$(".flipper-item.state-1").clone());
+        },
+
         onClick: function() {
             if (this.locked) return;
 
@@ -77,6 +82,9 @@ define(function(require) {
             setTimeout(function() {
                 $flipper.removeClass("animating");
                 this.locked = false;
+                this.setScreenReaderVisibility();
+                // Set aria live after first item is populated
+                this.$(".flipper-active-item").attr("aria-live", "polite");
             }.bind(this), 600);
         },
 
