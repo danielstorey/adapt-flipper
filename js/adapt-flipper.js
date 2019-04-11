@@ -61,10 +61,6 @@ define(function(require) {
             }, this);
         },
 
-        setScreenReaderVisibility: function() {
-            this.$(".flipper-active-item").empty().prepend(this.$(".flipper-item.state-1").clone());
-        },
-
         onClick: function() {
             if (this.locked) return;
 
