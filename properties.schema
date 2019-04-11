@@ -7,7 +7,15 @@
     "ariaRegion": {
       "type": "string",
       "required": true,
-      "default": "",
+      "default": "Flipper component. Click the button to cycle through the items",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "flipperButton": {
+      "type": "string",
+      "required": true,
+      "default": "Flipper button",
       "inputType": "Text",
       "validators": [],
       "translatable": true

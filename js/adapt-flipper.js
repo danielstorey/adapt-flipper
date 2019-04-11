@@ -44,8 +44,14 @@ define(function(require) {
         setItemVisibility: function() {
             var stage = this.model.get("_stage");
             var rx = /state-\d+/;
-            _.each(this.$(".flipper-item"), function(el, i) {
+            var $items = this.$(".flipper-item");
+            $items.attr("aria-hidden", true);
+            _.each($items, function(el, i) {
                 if (stage === i) {
+                    el.setAttribute("aria-hidden", false);
+                    setTimeout(function() {
+                        el.focus();
+                    }, 0);
                     el.className = el.className.replace(rx, 'state-1');
                 } else if (stage - 1 === i || (stage === 0 && i === this.model.get('_items').length - 1)) {
                     el.className = el.className.replace(rx, 'state-2');
@@ -82,7 +88,6 @@ define(function(require) {
             setTimeout(function() {
                 $flipper.removeClass("animating");
                 this.locked = false;
-                this.setScreenReaderVisibility();
                 // Set aria live after first item is populated
                 this.$(".flipper-active-item").attr("aria-live", "polite");
             }.bind(this), 600);
