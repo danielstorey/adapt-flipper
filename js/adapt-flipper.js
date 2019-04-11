@@ -26,7 +26,6 @@ define(function(require) {
         onImageReady: function() {
             this.setItemVisibility();
             this.setItemHeights();
-            this.setScreenReaderVisibility();
             this.setReadyStatus();
         },
 
