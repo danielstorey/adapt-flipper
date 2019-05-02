@@ -49,8 +49,8 @@ define(function(require) {
                 if (stage === i) {
                     el.setAttribute("aria-hidden", false);
                     setTimeout(function() {
-                        el.focus();
-                    }, 0);
+                        $(el).a11y_focus();
+                    }, 10);
                     el.className = el.className.replace(rx, 'state-1');
                 } else if (stage - 1 === i || (stage === 0 && i === this.model.get('_items').length - 1)) {
                     el.className = el.className.replace(rx, 'state-2');
@@ -60,7 +60,9 @@ define(function(require) {
             }, this);
         },
 
-        onClick: function() {
+        onClick: function(e) {
+            console.log(e);
+            
             if (this.locked) return;
 
             this.setLock();

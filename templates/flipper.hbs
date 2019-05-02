@@ -3,18 +3,19 @@
 	{{> component this}}
 	<div class="flipper-widget component-widget">
 		<div class="flipper-container">
-			<div class="flipper" role="button" tabindex="0" aria-label="{{_globals._components._flipper.flipperButton}}">
+			<div class="flipper">
 				{{#each _items}}
-					<div class="flipper-item nth-child-{{@index}} state-0" tabindex="-1">
-						{{#if title}}<div class="flipper-item-title">{{{title}}}</div>{{/if}}
-						{{#if body}}<div class="flipper-item-body">{{{body}}}</div>{{/if}}
+					<div class="flipper-item nth-child-{{@index}} state-0">
+						{{#if title}}<div class="flipper-item-title" tabindex="-1">{{{title}}}</div>{{/if}}
+						{{#if body}}<div class="flipper-item-body" tabindex="-1">{{{body}}}</div>{{/if}}
 						{{#if _graphic}}
-							{{#if _graphic.src}}<img class="flipper-item-img" src="{{_graphic.src}}" alt="{{_graphic.alt}}">{{/if}}
+							{{#if _graphic.src}}<img class="flipper-item-img" src="{{_graphic.src}}" alt="{{_graphic.alt}}" tabindex="-1">{{/if}}
 						{{/if}}
 						{{#if instruction}}<div class="flipper-item-instruction">{{{instruction}}}</div>{{/if}}
 					</div>
 				{{/each}}
 			</div>
 		</div>
+        <button class="flipper-button" aria-label="{{_globals._components._flipper.flipperButton}}"></button>
 	</div>
 </div>

@@ -11,15 +11,6 @@
 		-ms-perspective: 1000px;
 		width: 100%;
 		max-width: 100%;
-
-		.screen-reader-only {
-			//position: absolute;
-			//left: -10000px;
-			//top: auto;
-			//width: 1px;
-			//height: 1px;
-			//overflow: hidden;
-		}
 	}
 
 	.flipper {
@@ -99,7 +90,14 @@
 		}
 	}
 
-
+	.flipper-button {
+		position: absolute;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
 }
 
 .transform(@angle) {
